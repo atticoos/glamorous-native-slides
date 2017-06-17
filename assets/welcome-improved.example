@@ -1,0 +1,41 @@
+import glamorous from 'glamorous-native'
+
+export default class ReactNativeScreen extends Component {
+  render() {
+    return (
+      <Container>
+        <WelcomeText>
+          Welcome to React Native!
+        </WelcomeText>
+        <InstructionsText>
+          To get started, edit index.android.js
+        </InstructionsText>
+        <InstructionsText>
+          Double tap R on your keyboard to reload,{'\n'}
+          Shake or press menu button for dev menu
+        </InstructionsText>
+      </Container>
+    )
+  }
+}
+
+const Container = glamorous.view({
+  flex: 1,
+  justifyContent: 'center',
+  alignitems: 'center',
+  backgroundColor: '#F5FCFF
+})
+
+const Text = glamorous.text({
+  fontSize: 20,
+  textAlign: 'center'
+})
+
+const WelcomeText = glamorous(Text)({
+  margin: 10
+})
+
+const InstructionsText = glamorous(Text)({
+  color: '#333333',
+  marginBottom: 5
+})

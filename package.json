@@ -13,9 +13,13 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "glamorous": "^3.23.3",
     "normalize.css": "3.0.3",
+    "prop-types": "^15.5.10",
     "react": "15.4.2",
     "react-dom": "15.4.2",
+    "react-live": "^1.7.0",
+    "recompose": "^0.23.5",
     "spectacle": "^2.0.0"
   },
   "devDependencies": {
@@ -47,10 +51,10 @@
     "is-buffer": "^1.1.1",
     "markdown-loader": "^0.1.7",
     "node-libs-browser": "^0.5.3",
+    "raw-loader": "^0.5.1",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.4",
     "redbox-react": "^1.2.0",
-    "raw-loader": "^0.5.1",
     "rimraf": "^2.4.4",
     "style-loader": "^0.13.0",
     "surge": "latest",

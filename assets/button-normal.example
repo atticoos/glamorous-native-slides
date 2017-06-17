@@ -1,0 +1,37 @@
+function Button ({textStyle, color, children, ...props}) {
+  const colorModel = Color(color)
+  const textColor = colorModel.isLight()
+    ? styles.darkText
+    : styles.lightText;
+  const touchableUnderlay = colorModel.darken(0.2).hex()
+  const backgroundColor = color
+
+  return (
+    <TouchableUnderlay
+      underlayColor={touchableUnderlay}
+      style={[style, styles.touchable, {backgroundColor}]}
+      {...props}
+    >
+      <Text style={[styles.text, textColor, textStyle]}>
+        {children}
+      </Text>
+    </TouchableUnderlay>
+  )
+}
+
+const styles = StyleSheet.create({
+  touchable: {
+    padding: 20,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  text: {
+    fontSize: 12
+  },
+  lightText: {
+    color: '#fff'
+  },
+  darkText: {
+    color: '#000'
+  }
+})
