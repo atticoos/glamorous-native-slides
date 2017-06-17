@@ -60,8 +60,12 @@ const SlideTitle = withProps({
   // fit: true
 })(Heading)
 
-console.log('AYE?', CodeSlide)
-
+/**
+ * NOTES
+ *
+ * - Higher Order Component explanation
+ *
+ */
 export default class Presentation extends React.Component {
   render() {
     return (
@@ -102,6 +106,8 @@ export default class Presentation extends React.Component {
             <ListItem>Comparison of various approaches</ListItem>
             <ListItem>Demo of glamorous-native</ListItem>
           </List>
+
+          <Heading size={1}>😃</Heading>
         </Slide>
 
         <Slide transition={["zoom"]} bgColor="primary">
@@ -111,8 +117,9 @@ export default class Presentation extends React.Component {
           <List>
             <ListItem>Free of tradeoffs</ListItem>
             <ListItem>The best way to style components</ListItem>
-            <ListItem><i>Too</i> in depth behind the scenes</ListItem>
           </List>
+
+          <Heading size={1}>😐</Heading>
         </Slide>
 
         <Slide bgColor="#FFF2F2" notes={`
@@ -122,7 +129,7 @@ export default class Presentation extends React.Component {
     <li>API to create components with certain styles</li>
   </ul>`}>
           <GlamorousLogo />
-          <Appear><GlamorousLive /></Appear>
+          <GlamorousLive />
         </Slide>
 
         <Slide transition={["zoom"]} bgColor="primary" style={{maxHeight: 'auto'}}>
