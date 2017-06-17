@@ -11,7 +11,8 @@ function Button ({textStyle, children, ...props}) {
 const touchableProps = mapProps(
   ({color, ...props}) => ({
     ...props,
-    touchableUnderlay: Color(color).darken(0.2).hex()
+    color,
+    touchableUnderlay: darken(color, 0.2)
   })
 )
 
@@ -21,8 +22,9 @@ const Touchable = touchableProps(
       alignItems: 'center',
       justifyContent: 'center'
     },
-    ({large}) => ({
-      padding: large ? 40 : 20
+    ({large, color}) => ({
+      padding: large ? 40 : 20,
+      backgroundColor: color
     })
   )
 )
@@ -30,6 +32,6 @@ const Touchable = touchableProps(
 const Text = glamorous.text(
   ({color, large}) => ({
     fontSize: large ? 16 : 14,
-    color: Color(color).isLight() ? '#FFF' : '#000'
+    color: isLight(color) ? '#FFF' : '#000'
   })
 )

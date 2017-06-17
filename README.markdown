@@ -1,4 +1,7 @@
-# Spectacle Boilerplate
+# glamorous-native slides
+
+![screen shot 2017-06-17 at 7 33 32 pm](https://user-images.githubusercontent.com/656630/27256952-e576d3c8-5393-11e7-8a34-170e356ad1e8.png)
+
 
 ## Reference
 
@@ -6,11 +9,7 @@ The Spectacle core API is available at [https://github.com/FormidableLabs/specta
 
 ## Development
 
-After downloading the boilerplate, your first order of business is to open terminal and run `yarn`. (or `npm install` if you're about that life)
-
-Next, run `rm -R .git` to remove the existing version control.
-
-Then, to start up the local server, run `npm start`
+To start up the local server, run `npm start`
 
 Open a browser and hit [http://localhost:3000](http://localhost:3000), and we are ready to roll
 
