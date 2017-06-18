@@ -16,6 +16,7 @@ import {
   Text,
   CodePane,
   Layout,
+  Image,
   Fill
 } from "spectacle";
 
@@ -39,7 +40,9 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
-  icon: require('../assets/icon.png')
+  icon: require('../assets/icon.png'),
+  hoc: require('../assets/HOC2.png'),
+  hocPipeline: require('../assets/HOC-pipeline.png')
 };
 
 preloader(images);
@@ -58,6 +61,7 @@ const theme = createTheme({
 const SlideTitle = withProps({
   size: 4,
   textColor: 'secondary',
+  margin: '0px auto 20px'
   // fit: true
 })(Heading)
 
@@ -123,6 +127,54 @@ export default class Presentation extends React.Component {
           <Heading size={1}>😐</Heading>
         </Slide>
 
+        <Slide transition={[]} bgColor="primary">
+          <SlideTitle>Higher Order Components</SlideTitle>
+          <Image src={images.hoc} margin="0 auto" />
+        </Slide>
+
+        <Slide transition={[]} bgColor="primary">
+          <SlideTitle>Higher Order Components</SlideTitle>
+          <CodePane
+            lang="js"
+            source={require("raw-loader!../assets/hoc-text-normal.example")}
+          />
+        </Slide>
+
+        <Slide transition={[]} bgColor="primary">
+          <SlideTitle>Higher Order Functions</SlideTitle>
+          <CodePane
+            lang="js"
+            source={require('raw-loader!../assets/hoc.example')}
+          />
+        </Slide>
+
+        <Slide transition={[]} bgColor="primary">
+          <SlideTitle>Composable Higher Order Functions</SlideTitle>
+          <CodePane
+            lang="js"
+            source={require('raw-loader!../assets/hoc-composed.example')}
+          />
+        </Slide>
+
+        <CodeSlide
+          transition={["zoom"]}
+          bgColor="#2d2d2d"
+          lang="js"
+          code={require("raw-loader!../assets/hoc-composed.example")}
+          ranges={[
+            {loc: [0, 10000], title: 'Composable HOF'},
+
+            {loc: [15, 16], note: 'Composing a filter'},
+            {loc: [9, 14], note: 'Composing a filter'},
+
+            {loc: [9, 10], note: 'The input'},
+            {loc: [10, 14], note: '`age` is within the closure'},
+            {loc: [10, 11], note: 'Called with each user in the array'},
+            {loc: [11, 12], note: 'Compare the input with the age in the `closure`'}
+          ]}
+        />
+
+
         <Slide bgColor="#FFF2F2" notes={`
   <ul>
     <li>Kent C Dodds</li>
@@ -167,6 +219,24 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
 
+        <Slide transition={[]} bgColor="primary">
+          <SlideTitle>Classic Example</SlideTitle>
+          <Layout>
+            <Fill></Fill>
+            <Fill>
+              <CodePane
+                lang="jsx"
+                source={
+`<Button color="red" large>
+  Click me!
+</Button>`
+                }
+              />
+            </Fill>
+            <Fill></Fill>
+          </Layout>
+        </Slide>
+
         <Slide transition={["zoom"]} bgColor="primary" style={{maxHeight: 'auto'}}>
           <CodePane
             lang="jsx"
@@ -178,7 +248,7 @@ export default class Presentation extends React.Component {
             <Fill>
               {/*<Text textSize="1em" textColor="secondary">Vanilla</Text>*/}
               <CodePane
-                style={{marginRight: '5px', marginTop: 10, height: 720}}
+                style={{marginRight: 5, marginTop: 10, height: 720}}
                 lang="js"
                 source={require("raw-loader!../assets/button-normal.example")}
               />
@@ -187,7 +257,7 @@ export default class Presentation extends React.Component {
             <Fill>
               {/*<Text textSize="1em" textColor="secondary">glamorous</Text>*/}
               <CodePane
-                style={{marginLeft: '5px', marginTop: 10, height: 720}}
+                style={{marginLeft: 5, marginTop: 10, height: 720}}
                 lang="js"
                 source={require("raw-loader!../assets/button-composed.example")}
               />
@@ -239,6 +309,11 @@ export default class Presentation extends React.Component {
             {loc: [3, 4], note: 'And overriding styles are passed normally'}
           ]}
         />
+
+        <Slide transition={[]} bgColor="primary">
+          <SlideTitle>Higher Order Component</SlideTitle>
+          <Image src={images.hocPipeline} margin="0 auto" />
+        </Slide>
 
         {/*<Slide transition={["zoom"]} bgColor="primary" style={{maxHeight: 'auto'}}>
           <Heading size={4} textColor="secondary">The 🎶 and 💃</Heading>
