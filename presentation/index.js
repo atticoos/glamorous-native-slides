@@ -45,8 +45,9 @@ const images = {
 preloader(images);
 
 const theme = createTheme({
-  primary: "white",
-  secondary: "#1F2022",
+  primary: "gray",
+  secondary: 'white',
+  // secondary: "#1F2022",
   tertiary: "#03A9FC",
   quartenary: "#CECECE"
 }, {
