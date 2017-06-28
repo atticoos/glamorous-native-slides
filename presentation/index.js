@@ -173,7 +173,7 @@ export default class Presentation extends React.Component {
           <List>
             <ListItem>Long!</ListItem>
             <ListItem>Free of tradeoffs</ListItem>
-            <ListItem>The best way to style components</ListItem>
+            <ListItem>A complete replacement of StyleSheet</ListItem>
           </List>
 
           <Heading size={1}>😐</Heading>
@@ -181,7 +181,7 @@ export default class Presentation extends React.Component {
 
 
         <Slide>
-          <SlideTitle>Styling in React Nativce</SlideTitle>
+          <SlideTitle>Styling in React Native</SlideTitle>
           <CodePane
             lang="jsx"
             source={require("raw-loader!../assets/examples/welcome-jsx.example")}
