@@ -1,8 +1,10 @@
-function BaseText({style, ...props}) {
+function BaseText({style, large, ...props}) {
+  const fontSize = large ? 18 : 14;
+
   return (
     <Text
       // forward styles
-      style={[styles.defaultText, style]}
+      style={[styles.defaultText, {fontSize}, style]}
 
       // forward props
       {...props}
@@ -12,7 +14,6 @@ function BaseText({style, ...props}) {
 
 const styles = StyleSheet.create({
   defaultText: {
-    fontSize: 14,
     color: '#000',
     fontFamily: '...'
   }

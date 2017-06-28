@@ -1,20 +1,17 @@
 function Button ({textStyle, children, ...props}) {
   return (
-    <Touchable {...props} >
-      <Text style={textStyle}>
+    <Touchable {...props}>
+      <Text color={props.color} style={textStyle}>
         {children}
       </Text>
     </Touchable>
   )
 }
 
-const touchableProps = mapProps(
-  ({color, ...props}) => ({
-    ...props,
-    color,
-    touchableUnderlay: darken(color, 0.2)
-  })
-)
+const touchableProps = mapProps((props) => ({
+  touchableUnderlay: darken(props.color, 0.2),
+  ...props
+}))
 
 const Touchable = touchableProps(
   glamorous.touchableHighlight(

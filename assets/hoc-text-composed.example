@@ -1,4 +1,4 @@
-export default glamorous.text({
+const BaseText = glamorous.text({
   fontSize: 14,
   color: '#000',
   fontFamily: '...'

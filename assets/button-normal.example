@@ -1,13 +1,7 @@
-function Button ({textStyle, color, children, ...props}) {
-  const colorModel = Color(color)
-  const textColor = colorModel.isLight()
-    ? styles.darkText
-    : styles.lightText;
-
-  const underlayColor = colorModel
-    .darken(0.2)
-    .hex()
-
+function Button ({textStyle, color, large, children, ...props}) {
+  const textColor = isLightColor(color) ? styles.darkText : styles.lightText;
+  const underlayColor = darken(color, 0.2)
+  const padding = large ? 40 : 20
   const backgroundColor = color
 
   return (
@@ -15,7 +9,7 @@ function Button ({textStyle, color, children, ...props}) {
       underlayColor={underlayColor}
       style={[
         styles.touchable,
-        {backgroundColor}
+        {backgroundColor, padding}
         style,
       ]}
       {...props}

@@ -1,0 +1,5 @@
+const StyledText = glamorous(Text)(
+  props => ({
+    fontSize: props.large ? 24 : 16
+  })
+)

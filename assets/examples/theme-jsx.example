@@ -1,0 +1,5 @@
+<ThemeProvider theme={theme.light}>
+  <Screen>
+    <Title>Hello World</Title>
+  </Screen>
+</ThemeProvider>

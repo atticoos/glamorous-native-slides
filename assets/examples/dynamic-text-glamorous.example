@@ -1,0 +1,9 @@
+const BaseText = glamorous.text(
+  {
+    color: '#000',
+    fontFamily: '...'
+  },
+  props => ({
+    fontSize: props.large ? 18 : 14
+  })
+)

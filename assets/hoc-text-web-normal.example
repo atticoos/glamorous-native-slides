@@ -1,0 +1,19 @@
+function BaseText({className = '', ...props}) {
+  return (
+    <span
+      // forward class names
+      className={`${classes.defaultText} ${className}`}
+
+      // forward props
+      {...props}
+    />
+  )
+}
+
+const {classes} = jss.createStyleSheet({
+  defaultText: {
+    fontSize: 14,
+    color: '#000',
+    fontFamily: '...'
+  }
+}).attach();

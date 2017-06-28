@@ -1,0 +1,3 @@
+const StyledText = glamorous(Text)({
+  fontSize: 24
+})
