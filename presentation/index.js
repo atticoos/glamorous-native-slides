@@ -160,7 +160,7 @@ export default class Presentation extends React.Component {
               <Typist>npm install -g react-native-cli</Typist>,
               `react-native init GlamorousNativeDemo`,
               `npm install glamorous-native --save`,
-              <div style={{ color: "#33B969"}}>SUCCESS: Your just got easier!</div>
+              <div style={{ color: "#33B969"}}>SUCCESS: Your life just got easier!</div>
             ]}
           />
         </Slide>
@@ -385,7 +385,7 @@ export default class Presentation extends React.Component {
               <Typist>npm install -g react-native-cli</Typist>,
               `react-native init GlamorousNativeDemo`,
               `npm install glamorous-native --save`,
-              <div style={{ color: "#33B969"}}>SUCCESS: Your just got easier!</div>
+              <div style={{ color: "#33B969"}}>SUCCESS: Your life just got easier!</div>
             ]}
           />
         </Slide>
