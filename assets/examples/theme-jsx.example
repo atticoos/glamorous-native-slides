@@ -1,4 +1,4 @@
-<ThemeProvider theme={theme.light}>
+<ThemeProvider theme={theme}>
   <Screen>
     <Title>Hello World</Title>
   </Screen>

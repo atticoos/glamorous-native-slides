@@ -52,6 +52,8 @@ const images = {
 preloader(images);
 
 const theme = createTheme({
+  // primary: '#FFF2F2',
+  // secondary: '#CC3A4B',
   primary: "gray",
   secondary: 'white',
   // secondary: "#1F2022",
@@ -79,27 +81,32 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={["fade"]} transitionDuration={500} theme={theme}>
-        <Slide>
-          <Heading size={4} textColor="secondary" fit>Composing Styled Components</Heading>
-          <Text textSize="1em" textColor="secondary" margin="20px 0">With glamorous-native</Text>
-          <Text textSize="1.3em" textColor="secondary">Atticus White</Text>
+        <Slide bgColor="#FFF2F2">
+          <Heading size={4} textColor="#CC3A4B" fit>Composing Styled Components</Heading>
 
-          <div style={{ margin: "20px 0" }}></div>
+          <br/>
+
+          <Text textSize="1.3em" textColor="#CC3A4B">Featuring</Text>
+
+          <GlamorousLogo />
+          <br/>
+          <Text textSize="0.8em" textColor="#CC3A4B">with Atticus White</Text>
+          <br/><br/>
 
           <Layout>
             <Fill>
-              <Text textSize="1em" textColor="secondary" margin={10}>🏡 Boston</Text>
+              <Text textSize="1em" textColor="#CC3A4B" margin={10}>🏡 Boston</Text>
             </Fill>
             <Fill>
-              <Text textSize="1em" textColor="secondary" margin={10}>🏢 Robin</Text>
+              <Text textSize="1em" textColor="#CC3A4B" margin={10}>🏢 Robin</Text>
             </Fill>
           </Layout>
           <Layout>
             <Fill>
-              <Text textSize="1em" textColor="secondary" margin={10}>@atticoos</Text>
+              <Text textSize="1em" textColor="#CC3A4B" margin={10}>👋 @atticoos</Text>
             </Fill>
             <Fill>
-              <Text textSize="1em" textColor="secondary" margin={10}>@atticoos</Text>
+              <Text textSize="1em" textColor="#CC3A4B" margin={10}>👋 @robinpowered</Text>
             </Fill>
           </Layout>
         </Slide>
@@ -152,7 +159,6 @@ export default class Presentation extends React.Component {
             output={[
               <Typist>npm install -g react-native-cli</Typist>,
               `react-native init GlamorousNativeDemo`,
-              `cd GlamorousNativeDemo`,
               `npm install glamorous-native --save`,
               <div style={{ color: "#33B969"}}>SUCCESS: Your just got easier!</div>
             ]}
@@ -256,7 +262,7 @@ export default class Presentation extends React.Component {
           <Text textSize={24} style={{margin: '<2>  </2>0px 0'}}>By Kent C. Dodds (@kentcdodds)</Text>
 
             {['API', 'Static Styles', 'Dynamic Styles'].map((title, i) => (
-              <div style={{width: '400px', margin: '10px auto'}} key={i}>
+              <div style={{width: '400px', margin: '20px auto'}} key={i}>
                 <Text textColor="primary" textSize={24}>{title}</Text>
                 <CodePane
                   lang="js"
@@ -370,13 +376,15 @@ export default class Presentation extends React.Component {
 
 
         <Slide>
-          <SlideTitle>Getting Started</SlideTitle>
+          <SlideTitle>Code Along</SlideTitle>
           <br />
           <Terminal
             title="1. atticoos: ~(zsh)"
             showFirstEntry={true}
             output={[
-              <Typist>npm install glamorous-native --save </Typist>,
+              <Typist>npm install -g react-native-cli</Typist>,
+              `react-native init GlamorousNativeDemo`,
+              `npm install glamorous-native --save`,
               <div style={{ color: "#33B969"}}>SUCCESS: Your just got easier!</div>
             ]}
           />
@@ -386,9 +394,23 @@ export default class Presentation extends React.Component {
         <Slide>
           <SlideTitle>Thanks!</SlideTitle>
 
-          <List>
-            <ListItem><a href="#">slides.atticoos.com/glamorous-native</a></ListItem>
-            <ListItem><a href="#">github.com/robinpowered/glamorous-native</a></ListItem>
+          <Text textColor="secondary" size={18} textAlign="left">📖 Resources</Text>
+          <List style={{listStyleType: 'none', marginLeft: 20}}>
+            <ListItem>slides.atticoos.com/glamorous-native</ListItem>
+            <ListItem>links.atticoos.com/glamorous-native</ListItem>
+          </List>
+
+          <Text textColor="secondary" size={18} textAlign="left">🛠 Github Projects</Text>
+          <List style={{listStyleType: 'none', marginLeft: 20}}>
+            <ListItem>robinpowered/glamorous-native</ListItem>
+            <ListItem>paypal/glamorous</ListItem>
+            <ListItem>acdlite/recompose</ListItem>
+          </List>
+
+          <Text textColor="secondary" size={18} textAlign="left">👋 Get in touch</Text>
+          <List style={{listStyleType: 'none', marginLeft: 20}}>
+            <ListItem>@atticoos on Twitter</ListItem>
+            <ListItem>@robinpowered on Twitter</ListItem>
           </List>
         </Slide>
       </Deck>
