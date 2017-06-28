@@ -1,0 +1,12 @@
+<Container>
+  <IntroText>
+    Welcome to React Native!
+  </IntroText>
+  <InstructionText>
+    To get started, edit index.android.js
+  </InstructionText>
+  <InstructionText>
+    Double tap R on your keyboard to reload,{'\\n'}
+    Shake or press menu button for dev menu
+  </InstructionText>
+</Container>

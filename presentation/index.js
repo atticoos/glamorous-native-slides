@@ -78,8 +78,8 @@ const SlideTitle = withProps({
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
-        <Slide transition={["zoom"]} bgColor="primary">
+      <Deck transition={["fade"]} transitionDuration={500} theme={theme}>
+        <Slide>
           <Heading size={4} textColor="secondary" fit>Composing Styled Components</Heading>
           <Text textSize="1em" textColor="secondary" margin="20px 0">With glamorous-native</Text>
           <Text textSize="1.3em" textColor="secondary">Atticus White</Text>
@@ -104,7 +104,8 @@ export default class Presentation extends React.Component {
           </Layout>
         </Slide>
 
-        <Slide transition={["zoom"]} bgColor="primary">
+
+        <Slide>
           <SlideTitle>
             Robin + React Native
           </SlideTitle>
@@ -114,7 +115,8 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        <Slide transition={["zoom"]} bgColor="primary">
+
+        <Slide>
           <SlideTitle>
             Robin + React Native
           </SlideTitle>
@@ -124,7 +126,8 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        <Slide transition={["zoom"]} bgColor="primary">
+
+        <Slide>
           <SlideTitle>
             What this talk <strong>is</strong>
           </SlideTitle>
@@ -139,7 +142,8 @@ export default class Presentation extends React.Component {
           <Heading size={1}>😃</Heading>
         </Slide>
 
-        <Slide transition={["zoom"]} bgColor="primary" style={{maxHeight: 'auto'}}>
+
+        <Slide>
           <SlideTitle>Code Along</SlideTitle>
           <br />
           <Terminal
@@ -155,7 +159,8 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        <Slide transition={["zoom"]} bgColor="primary">
+
+        <Slide>
           <SlideTitle>
             What this talk is <strong>not</strong>
           </SlideTitle>
@@ -168,79 +173,42 @@ export default class Presentation extends React.Component {
           <Heading size={1}>😐</Heading>
         </Slide>
 
-        <Slide bgColor="primary">
+
+        <Slide>
           <SlideTitle>Styling in React Nativce</SlideTitle>
           <CodePane
             lang="jsx"
-            source={
-`<View style={styles.container}>
-  <Text style={styles.welcome}>
-    Welcome to React Native!
-  </Text>
-  <Text style={styles.instructions}>
-    To get started, edit index.android.js
-  </Text>
-  <Text style={styles.instructions}>
-    Double tap R on your keyboard to reload,{'\\n'}
-    Shake or press menu button for dev menu
-  </Text>
-</View>`} />
+            source={require("raw-loader!../assets/examples/welcome-jsx.example")}
+          />
           <CodePane
             lang="js"
-            source={
-`const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});`} />
-        </Slide>
-
-
-        <Slide bgColor="primary">
-          <SlideTitle>Styling in React Native</SlideTitle>
-          <CodePane
-            lang="jsx"
-            source={
-`<Container>
-  <IntroText>
-    Welcome to React Native!
-  </IntroText>
-  <InstructionText>
-    To get started, edit index.android.js
-  </InstructionText>
-  <InstructionText>
-    Double tap R on your keyboard to reload,{'\\n'}
-    Shake or press menu button for dev menu
-  </InstructionText>
-</Container>`} />
-        </Slide>
-
-        <Slide transition={[]} bgColor="primary">
-          <SlideTitle>The 🎶 and 💃</SlideTitle>
-          <CodePane
-            lang="js"
-            source={require("raw-loader!../assets/hoc-text-normal.example")}
+            source={require("raw-loader!../assets/examples/welcome-styles.example")}
           />
         </Slide>
 
+
+        <Slide>
+          <SlideTitle>Styling in React Native</SlideTitle>
+          <CodePane
+            lang="jsx"
+            source={require("raw-loader!../assets/examples/welcome-glamorous.example")}
+          />
+        </Slide>
+
+
+        <Slide>
+          <SlideTitle>The 🎶 and 💃</SlideTitle>
+          <CodePane
+            lang="js"
+            source={require("raw-loader!../assets/examples/hoc-text-normal.example")}
+          />
+        </Slide>
+
+
         <CodeSlide
-          transition={["zoom"]}
           bgColor="#2d2d2d"
           lang="js"
-          code={require("raw-loader!../assets/hoc-text-normal.example")}
+          code={require("raw-loader!../assets/examples/hoc-text-normal.example")}
           ranges={[
             {loc: [0, 11], note: 'Wrapping component'},
             {loc: [2, 9], note: 'Wrapped component'},
@@ -251,7 +219,7 @@ export default class Presentation extends React.Component {
         />
 
 
-        <Slide transition={["zoom"]} bgColor="primary" style={{maxHeight: 'auto'}}>
+        <Slide>
           <Heading size={4} textColor="secondary" style={{marginBottom: 50}}>We're not much different</Heading>
           <Layout>
             <Fill>
@@ -259,7 +227,7 @@ export default class Presentation extends React.Component {
               <CodePane
                 style={{marginRight: '5px', marginTop: 10, height: 430}}
                 lang="js"
-                source={require("raw-loader!../assets/hoc-text-web-normal.example")}
+                source={require("raw-loader!../assets/examples/hoc-text-web-normal.example")}
               />
             </Fill>
 
@@ -268,7 +236,7 @@ export default class Presentation extends React.Component {
               <CodePane
                 style={{marginLeft: '5px', marginTop: 10, height: 430}}
                 lang="js"
-                source={require("raw-loader!../assets/hoc-text-normal.example")}
+                source={require("raw-loader!../assets/examples/hoc-text-normal.example")}
               />
             </Fill>
           </Layout>
@@ -281,32 +249,26 @@ export default class Presentation extends React.Component {
           <Image src={images.styleTimeline} />
         </Slide>
 
-        <Slide bgColor="#FFF2F2" notes={`
-  <ul>
-    <li>Kent C Dodds</li>
-    <li>Inspiration (styled-components)</li>
-    <li>API to create components with certain styles</li>
-  </ul>`}>
+
+        <Slide bgColor="#FFF2F2">
           <GlamorousLogo />
 
+          <Text textSize={24} style={{margin: '<2>  </2>0px 0'}}>By Kent C. Dodds (@kentcdodds)</Text>
 
             {['API', 'Static Styles', 'Dynamic Styles'].map((title, i) => (
-              <div style={{width: '400px', margin: '10px auto'}}>
+              <div style={{width: '400px', margin: '10px auto'}} key={i}>
                 <Text textColor="primary" textSize={24}>{title}</Text>
                 <CodePane
                   lang="js"
                   style={{width: 300}}
-                  source={require(`raw-loader!../assets/glamorous-api-${i + 1}.example`)}
+                  source={require(`raw-loader!../assets/examples/glamorous-api-${i + 1}.example`)}
                 />
               </div>
             ))}
-
         </Slide>
 
 
-
-
-        <Slide transition={["zoom"]} bgColor="primary" style={{maxHeight: 'auto'}}>
+        <Slide>
           <SlideTitle>Compositionally Styled Components</SlideTitle>
           <Layout>
             <Fill>
@@ -314,7 +276,7 @@ export default class Presentation extends React.Component {
               <CodePane
                 style={{marginRight: '5px', marginTop: 10, height: 400}}
                 lang="js"
-                source={require("raw-loader!../assets/hoc-text-normal.example")}
+                source={require("raw-loader!../assets/examples/hoc-text-normal.example")}
               />
             </Fill>
 
@@ -323,7 +285,7 @@ export default class Presentation extends React.Component {
               <CodePane
                 style={{marginLeft: '5px', marginTop: 10, height: 400}}
                 lang="js"
-                source={require("raw-loader!../assets/hoc-text-composed.example")}
+                source={require("raw-loader!../assets/examples/hoc-text-composed.example")}
               />
             </Fill>
           </Layout>
@@ -331,7 +293,7 @@ export default class Presentation extends React.Component {
 
 
 
-        <Slide bgColor="primary">
+        <Slide>
           <SlideTitle>Dynamic Styles</SlideTitle>
           <Layout>
             <Fill>
@@ -356,7 +318,7 @@ export default class Presentation extends React.Component {
 
 
 
-        <Slide transition={[]} bgColor="primary">
+        <Slide>
           <SlideTitle>Themes</SlideTitle>
           <CodePane
             lang="js"
@@ -372,7 +334,8 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        <Slide transition={["zoom"]} bgColor="primary">
+
+        <Slide>
           <SlideTitle>
             Real World Example
           </SlideTitle>
@@ -382,7 +345,8 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        <Slide transition={["zoom"]} bgColor="primary">
+
+        <Slide>
           <SlideTitle>
             Real World Example
           </SlideTitle>
@@ -392,7 +356,8 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        <Slide transition={["zoom"]} bgColor="primary">
+
+        <Slide>
           <SlideTitle>
             What to look for
           </SlideTitle>
@@ -403,7 +368,8 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
 
-        <Slide transition={["zoom"]} bgColor="primary" style={{maxHeight: 'auto'}}>
+
+        <Slide>
           <SlideTitle>Getting Started</SlideTitle>
           <br />
           <Terminal
@@ -414,20 +380,16 @@ export default class Presentation extends React.Component {
               <div style={{ color: "#33B969"}}>SUCCESS: Your just got easier!</div>
             ]}
           />
-          <br />
-          <CodePane
-            lang="js"
-            source={
-`import glamorous from 'glamorous-native'
+        </Slide>
 
-const DefaultText = glamorous.text({
-  fontSize: 16,
-  color: '#000'
-})
 
-export default DefaultText;`
-            }
-          />
+        <Slide>
+          <SlideTitle>Thanks!</SlideTitle>
+
+          <List>
+            <ListItem><a href="#">slides.atticoos.com/glamorous-native</a></ListItem>
+            <ListItem><a href="#">github.com/robinpowered/glamorous-native</a></ListItem>
+          </List>
         </Slide>
       </Deck>
     );
